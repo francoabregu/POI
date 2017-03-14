@@ -1,0 +1,27 @@
+{{#partial "contenido"}}
+
+<div class="home login" align="center">
+	<img src="/img/ico_poi.png" alt="POI" class="ico icoGrande">
+	<form action="/"  method="post" class="formulario fuente-RobotoC">
+		<div>
+    		<img src="/img/ico_usuario.png" alt="Usuario" class="ico icoChico">
+       		<input type="text" name="nombreUsuario" class="input fuente-RobotoC" required>
+    	</div>
+    	<div>    
+       		<img src="/img/ico_password.png" alt="Password" class="ico icoChico">
+       		<input type="password" name="contrasenia" class="input fuente-RobotoC" required>
+    	</div>
+		{{#if mensajeError}}
+    	<div>
+    		<p class="fuente-RobotoC">{{mensajeError}}<p>
+       	</div>
+       	{{/if}}
+       	<div>
+           	<input type="submit" value="INGRESAR" class="boton botonAmarillo fuente-Oswald">
+       	</div>
+	</form>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

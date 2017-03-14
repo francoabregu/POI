@@ -1,0 +1,43 @@
+{{#partial "contenido"}}
+
+<div class="home editor" align="center">
+	<script type="text/javascript">Header ( "lapiz", "Nueva Terminal" )</script>
+	<script type="text/javascript">NavBar ( "admin" )</script>
+	<div class="formulario fuente-Roboto">
+		<form action="/CrearTerminal" method="post">
+    		<table cellspacing="1" cellpadding="1" class="datosPoi">
+    			<tr>
+					<th><b>NOMBRE</b></th>
+					<th><b>COMUNA</b></th>
+					
+				</tr>
+				<tr>
+					<td><input type="text" name="nombre" class="inputTerminal" required></td>
+					<td><input type="numer" min="1" max="15" step="1" name="comuna" class="inputTerminal" required></td>
+				</tr>
+				<tr>
+					<th><b>TIEMPO MAXIMO BUSQUEDA PERMITIDO (ms)</b></th>
+					<th><b>POSICION</b></th>
+				</tr>
+				<tr>
+					<td><input type="number" min="0" step="1" name="tiempoBusqueda" class="inputTerminal" required></td>
+					<td><input type="number" name="longitud" step="0.0000001" class="inputPosicion" required> <b> ; </b> <input type="number" step="0.0000001" name="latitud" class="inputPosicion" required>
+				</tr>
+				<tr>
+					<th><b>NOMBRE DE USUARIO</b></th>
+					<th><b>CLAVE</b></th>
+				</tr>
+				<tr>
+					<td><input type="text" name="username" class="inputTerminal" required></td>
+					<td><input type="password" name="contrasenia" class="inputTerminal" required></td>
+				</tr>
+    		</table>
+      		<input type="submit" value="GUARDAR" class="boton botonAmarillo fuente-Oswald">
+		</form>
+	</div>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

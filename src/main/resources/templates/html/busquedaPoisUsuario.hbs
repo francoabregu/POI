@@ -1,0 +1,54 @@
+{{#partial "contenido"}}
+
+<div class="home busqueda" align="center">
+	<script type="text/javascript">Header ( "lupa", "POIs" )</script>
+	<div align="left">
+		<form action="/PerfilTerminal" method="post" class="formulario fuente-Roboto">
+			<input type="checkbox" name="checkbox" value="paradaColectivo" id="RADIO-CHECK"  {{#if paradaCheckbox}} checked {{/if}}>
+            	<b> PARADA DE COLECTIVO</b>
+			<input type="checkbox" name="checkbox" value="localComercial" id="RADIO-CHECK"  {{#if localCheckbox}} checked {{/if}}>
+				<b> LOCAL COMERCIAL</b>
+			<input type="checkbox" name="checkbox" value="CGP" id="RADIO-CHECK"  {{#if cgpCheckbox}} checked {{/if}}>
+            	<b> CGP</b>
+            <input type="checkbox" name="checkbox" value="banco" id="RADIO-CHECK"  {{#if bancoCheckbox}} checked {{/if}}>
+                <b> BANCO</b>
+			{{#if cantidadResultados}}
+				<input type="hidden" name="cantidadResultados" value="{{cantidadResultados}}">
+            {{else}}
+                <input type="hidden" name="cantidadResultados" value="5">
+            {{/if}}
+            <div align="center">
+            	<input type="search" name="criterioBusqueda" value="{{criterioBusqueda}}" class="input fuente-RobotoC">
+                <input type="submit" name="botonBuscar" value="BUSCAR" class="boton botonAmarillo fuente-Oswald">
+                {{#if pois}}
+	            	<table cellspacing="0" cellpadding="7" class="resultados fuente-Roboto">
+	                	<tr>
+	    			    	<th>NOMBRE</th>
+	    			        <th>DIRECCION</th> 
+	    			        <th>DISTANCIA</th>
+	    			        <th>TIPO</th>
+	    			        <th></th>
+	                    </tr>
+	                    {{#each pois}}
+	                    	<tr>
+	                    		<td><b>{{poi.nombre}}</b></td>
+	                    		<td>{{poi.direccion.callePrincipal}} {{poi.direccion.numero}}</td> 
+	                    		<td>{{distancia}} mts.</td>
+	                    		<td>{{tipoPoi}}</td>
+	                        	<td><a href="/VerPoi/{{poi.poi_id}}" class="enlace botonVerde fuente-RobotoC">detalles</a></td>
+	              			</tr>
+	                    {{/each}}
+	                </table>
+                    {{/if}}
+                    {{#if masResultados}}
+  		    			<input type="submit" value="MAS RESULTADOS" class="boton botonGris fuente-Oswald">
+  					{{/if}}
+			</div>
+		</form>
+    </div>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}  

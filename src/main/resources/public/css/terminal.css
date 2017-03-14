@@ -1,0 +1,235 @@
+body { 
+    margin: 0px auto;
+    background-color: #DDDDDD 
+}
+.container {
+	position: relative;
+	margin: 5px auto;
+	padding: 0;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #DDDDDD
+}
+.home {
+	position: relative;
+	top: 20px;
+	margin: 0 auto;
+	max-width: 700px;
+	background-color: #FFFFFF;
+	border-radius: 20px 0;
+	border: 1px solid #BBBBBB;
+	color: #212121;
+	box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.25)
+}
+.login {
+    padding: 60px;
+	max-width: 400px;
+	font-size: 24px
+}
+.login p {
+	font-size: 20px;
+	color: #FF0000;
+	font-weight: bold	
+}
+.busqueda {
+    padding: 0;
+    max-width: 700px;
+	font-size: 14px
+}
+.formulario { margin: 15px 20px }
+.input {
+    position: relative;
+    margin: 10px;
+    padding-left:10px;
+	width: 300px;
+	height: 30px;
+	background-color: #DDDDDD; 
+	border: 1px solid #AAAAAA;
+	font-size: 1em;
+	color: #616161
+}
+.inputPoi {
+	width: 180px;
+	height: 25px;
+	background-color: #FFFFFF; 
+	text-align: center;
+	font-size: 0.9em;
+	color: #616161;
+	border: 1px solid #AAAAAA
+}
+.inputFecha {
+	width: 150px;
+	margin-right: 15px;
+	background-color: #DDDDDD;
+	text-align: right;
+	font-size: 1.1em;
+	color: #212121;
+	border: 1px solid #AAAAAA
+}
+.inputChico {
+	width: 50px;
+	height: 25px;
+	background-color: #DDDDDD;
+	text-align:center;
+	font-size: 0.9em;
+	color: #212121;
+	border: 1px solid #AAAAAA
+}
+.inputTerminal {
+	margin: 10px;
+	text-align: center;
+	width: 300px;
+	height: 30px;
+	background-color: #FFFFFF; 
+	border: 1px solid #BBBBBB;
+	font-size: 1em;
+	color: #616161	
+}
+.inputPosicion {
+	width: 100px;
+	height: 30px;
+	background-color: #FFFFFF; 
+	text-align: center;
+	font-size: 0.9em;
+	color: #616161;
+	border: 1px solid #BBBBBB
+}
+.resultados {
+    width: 600px;
+    background-color: #DDDDDD;
+    font-size: 1.1em;
+    color: #212121;
+	border: 1px solid #AAAAAA
+}
+.resultados th {
+	font-weight: bold;
+	text-align: left;
+    background-color: #BBBBBB;
+    border-bottom: 1px solid #AAAAAA
+}
+.editor {
+    padding: 0;
+	max-width: 700px;
+	font-size: 12px
+}
+.datosPoi {
+	padding: 10px;
+	font-size: 1.2em;
+ 	background-color: #DDDDDD;
+ 	border: 1px solid #AAAAAA
+}
+.datosPoi th {
+	vertical-align: bottom;
+	font-size: 1em
+}
+.datosPoi td { text-align: center }
+#HEADER {
+	position: relative;
+	padding: 0;
+	height: 80px;
+	margin: 0 auto;
+	background-color: #FFC107;
+	border-radius: 20px 0 0 0;
+	border-bottom: 1px solid #BBBBBB
+}
+.textoHeader {
+	margin-left: 20px;
+    font-size: 48px;
+    color: #000000
+}
+#FOOTER {
+    position: relative;
+	padding: 0;
+	height: 50px;
+	margin: 0 auto;
+	background-color: #AAAAAA;
+	border-radius: 0 0 20px 0;
+	border-top: 1px solid #BBBBBB
+}
+.textoFooter {
+    font-size: 20px;
+    font-weight: bold;
+    color: #212121
+}
+#NAVBAR {
+    position: relative;
+	padding: 0;
+	height: 50px;
+	margin: 0 auto;
+	background-color: #FFFFFF
+}
+.ico { 
+    position: relative;
+    top: 8px;
+    border: 0 
+}
+.icoGrande {
+    width: 96px;
+    height: 96px
+}
+.icoMediano {
+    width: 64px;
+    height: 64px
+}
+.icoChico {
+    width: 32px;
+    height: 32px
+}
+.boton {
+	position: relative;
+	margin: 20px auto;
+	padding: 1em;
+	font-size: 1.2em;
+	border-radius: 8px;
+	border: 0
+}
+.botonAmarillo, .botonFuncionalidad:hover, .botonNavBar:hover {
+	background-color: #FFC107;
+	color: #000000
+}
+.botonAzul {
+	background-color: #2196F3;
+	color: #FFFFFF	
+}
+.botonRojo {
+	background-color: #D9534F;
+	color: #FFFFFF	
+}
+.botonVerde {
+	background-color: #4CAF50;
+	color: #FFFFFF	
+}
+.botonGris {
+	background-color: #757575;
+	color: #FFFFFF	
+}
+.botonFuncionalidad {
+	width: 350px;
+	padding: 20px;
+	font-size: 1.5em;
+	text-decoration: none;
+	border-radius: 20px 0 20px 0;
+	border: 0
+}
+.botonNavBar {
+	margin: 5px;
+	padding: 10px;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 10px 0 10px 0;
+	border: 0
+}
+.enlace {
+    position: relative;
+	margin: 1px auto;
+	padding: 0.5em;
+	font-size: 0.8em;
+	text-decoration: none;
+	border-radius: 4px;
+	border: 1px solid #AAAAAA
+}
+
+.fuente-Roboto { font-family: 'Roboto', sans-serif }
+.fuente-RobotoC { font-family: 'Roboto Condensed', sans-serif }
+.fuente-Oswald { font-family: 'Oswald', sans-serif }
+.fuente-Ubuntu { font-family: 'Ubuntu', sans-serif }

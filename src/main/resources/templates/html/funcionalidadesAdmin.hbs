@@ -1,0 +1,22 @@
+{{#partial "contenido"}}
+
+<div class="home" align="center">
+	<script type="text/javascript">Header ( "home", "Administrador" )</script>
+	<div style="margin:35px 0">
+		<button type="button" class="botonFuncionalidad botonGris fuente-Oswald" 
+			OnClick="parent.location='/PerfilAdministrador/AdministrarPois'">VER POIS</button>
+	</div>
+	<div style="margin:35px 0">
+		<button type="button" class="botonFuncionalidad botonGris fuente-Oswald" 
+			OnClick="parent.location='/PerfilAdministrador/AdministrarTerminales'">VER TERMINALES</button>
+	</div>
+	<div style="margin:35px 0">
+		<button type="button" class="botonFuncionalidad botonGris fuente-Oswald" 
+			OnClick="parent.location='/PerfilAdministrador/AdministrarBusquedas'">HISTORIAL DE CONSULTAS</button>
+	</div>
+	<script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}   

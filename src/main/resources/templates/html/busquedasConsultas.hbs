@@ -1,0 +1,58 @@
+{{#partial "contenido"}}
+
+<div class="home busqueda" align="center">
+	<script type="text/javascript">Header ( "lupa", "Consultas" )</script>
+    <script type="text/javascript">NavBar ( "admin" )</script>
+    <div class="formulario fuente-Roboto" align="left">
+    	<form method="post">
+        	{{#if terminales}}
+            	<select name="nombreTerminal" style="margin-left:20px" class="input fuente-Oswald">
+            		<option value=""></option>
+               		{{#each terminales}}
+                		<option value="{{nombre}}">{{nombre}}</option>
+                	{{/each}}
+            	</select>
+            {{/if}}
+			<div class="formulario">
+        		<b>DESDE: </b>
+        			<input type="date" name="fechaInicio" value="{{fechaInicio}}" class="inputFecha fuente-RobotoC">
+        		<b>HASTA: </b>
+        			<input type="date" name="fechaFin" value="{{fechaFin}}" class="inputFecha fuente-RobotoC">
+        	</div>
+        	<div class="formulario">
+            	<b>CANTIDAD DE RESULTADOS: </b>
+                    <input type="number" name="min" value="{{min}}" class="inputChico" step="1" min="0"> - <input type="number" name="max" value="{{max}}" class="inputChico" step="1" min="0">      
+			</div>
+            <div align="center">
+            	<input type="submit" value="FILTRAR" class="boton botonAmarillo fuente-Oswald">
+            </div>
+            <div align="center">
+            	{{#if busquedas}}
+                	<table cellspacing="0" cellpadding="7" class="resultados fuente-Roboto">
+                        <tr>
+                            <th>CONSULTA</th>
+                            <th>FECHA</th>
+                            <th>TERMINAL</th>  
+                            <th>RESULTADOS</th>    
+                            <th></th>
+                        </tr>
+                        {{#each busquedas}}
+                        	<tr>
+                            	<td><b>{{criterioDeBusqueda}}</b></td>
+                            	<td>{{fecha}}</td>
+                            	<td>{{nombreTerminal}}</td>
+                            	<td>{{cantidadResultadosDevueltos}}</td>
+                            	<td><a href="/VerBusqueda/{{busqueda_id}}" class="enlace botonAzul fuente-RobotoC">m&aacute;s info</a></td>
+                        	</tr>
+                       {{/each}}
+                    </table>
+                {{/if}}
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

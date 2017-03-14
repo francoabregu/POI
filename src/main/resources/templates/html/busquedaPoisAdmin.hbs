@@ -1,0 +1,57 @@
+{{#partial "contenido"}}
+
+<div class="home busqueda" align="center">
+	<script type="text/javascript">Header ( "lupa", "POIs" )</script>
+	<script type="text/javascript">NavBar ( "admin" )</script>
+	<div align="left">
+		<form method="post" class="formulario fuente-Roboto">
+		<input type="radio" name="selector" value="nombre" id="RADIO-CHECK" OnClick="habilitarTexto()" {{#if nombreSeleccionado}} checked {{/if}}>
+        	<b> NOMBRE</b>
+        <input type="radio" name="selector" value="tipos" id="RADIO-CHECK" OnClick="habilitarSelect()" {{#if tipoSeleccionado}} checked {{/if}}> 
+        	<b> TIPO</b>
+		<div align="center">
+			<input type="search" id="filtroNombre" name="filtroNombre" value="{{nombre}}" class="input fuente-RobotoC" {{#unless nombreSeleccionado}} hidden {{/unless}} >
+			<select id="tipos" name="tipos" class="input fuente-RobotoC" {{#unless tipoSeleccionado}} hidden {{/unless}}>
+				<option value="BANCO" {{#if bancoSeleccionado}} selected {{/if}}>Banco</option>
+				<option value="LOCALCOMERCIAL" {{#if localSeleccionado}} selected {{/if}}>Local Comercial</option>
+				<option value="CGP" {{#if cgpSeleccionado}} selected {{/if}}>CGP</option>
+				<option value="PARADACOLECTIVO" {{#if paradaSeleccionado}} selected {{/if}}>Parada de Colectivo</option>
+			</select>
+			{{#if cantidadResultados}}
+        		<input type="hidden" name="cantidadResultados" value="{{cantidadResultados}}">
+        	{{else}}
+        		<input type="hidden" name="cantidadResultados" value="5">
+        	{{/if}}
+			<input type="submit" name="botonFiltrar" value="FILTRAR" class="boton botonAmarillo fuente-Oswald"{{#unless mostrarBotonFiltrar}} hidden {{/unless}}>
+        	{{#if pois}}
+	    		<table cellspacing="0" cellpadding="3" class="resultados fuente-Roboto">
+	        		<tr>
+	            		<th>ID</th>
+	    				<th>NOMBRE</th>
+	    				<th>DIRECCION</th> 
+	    				<th>TIPO</th>
+	    				<th colspan="2"></th>
+	    			</tr>
+	            	{{#each pois}}
+	            		<tr>
+	            			<td>{{poi.poi_id}}</td>
+							<td><b>{{poi.nombre}}</b></td>
+		            		<td>{{poi.direccion.callePrincipal}} {{poi.direccion.numero}}</td> 
+		            		<td>{{tipoPoi}}</td>
+	                		<td><a href="/PerfilAdministrador/AdministrarPois/ModificarPoi/{{poi.poi_id}}" class="enlace botonAzul fuente-RobotoC">editar</a></td>
+	                		<td><button type="submit" formmethod="post" formaction="/BorrarPoi/{{poi.poi_id}}" class="enlace botonRojo fuente-RobotoC">eliminar</button></td>
+	            		</tr>
+	            	{{/each}}
+	        	</table>
+	    	{{/if}}
+	    	{{#if masResultados}}
+  		    	<input type="submit" value="MAS RESULTADOS" class="boton botonGris fuente-Oswald">
+  			{{/if}}
+		</form>
+    </div>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+ 	
+{{/partial}}
+
+{{>layout.hbs}}

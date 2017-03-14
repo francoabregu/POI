@@ -1,0 +1,113 @@
+{{#partial "contenido"}}
+
+<div class="home editor" align="center">
+	<script type="text/javascript">Header ( "lapiz", "Editar POI" )</script>
+	<script type="text/javascript">NavBar ( "admin" )</script>
+	<div class="formulario fuente-Roboto">
+		<form action="/ModificarPoi/{{poi.poi_id}}"  method="post" id="modForm">
+			<table cellspacing="1" cellpadding="1" class="datosPoi">
+				<tr>
+					<td colspan="2"><b>ID</b></td>
+					<td colspan="2">{{poi.poi_id}}</td>
+				</tr>
+				<tr>
+					<td colspan="2"><b>NOMBRE</b></td>
+					<td colspan="2"><input type="text" name="nombrePoi" value="{{poi.nombre}}" class="inputPoi"></td>
+				</tr>
+				<tr>												
+					<td colspan="2" align="right"><b>DESCRIPCION</b></td>
+					<td colspan="2" align="left"><textarea name="descripcion" form="modForm" class="inputPoi">{{poi.descripcion}}</textarea></td>
+				</tr>
+				<tr>
+					<th colspan="4">DIRECCION</th>
+				</tr>	
+				<tr>
+					<th colspan="2">Calle</th>
+					<th colspan="2">Altura</th>
+				</tr>
+				<tr>	
+					<td colspan="2">
+						<input type="text" name="callePpal" value="{{poi.direccion.callePrincipal}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="numero" value="{{poi.direccion.numero}}" class="inputPoi">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="4">Entre</th>
+				</tr>
+				<tr>
+					<th colspan="2">Calle 1</th>
+					<th colspan="2">Calle 2</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="entrecalle1" value="{{poi.direccion.entrecalle1}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="entrecalle2" value="{{poi.direccion.entrecalle2}}" class="inputPoi">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="4">DATOS COMPLEMENTARIOS</th>
+				</tr>
+				<tr>
+					<th colspan="2">Piso</th>
+					<th colspan="2">Departamento</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="piso" value="{{poi.direccion.piso}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="departamento" value="{{poi.direccion.departamento}}" class="inputPoi">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">Unidad</th>
+					<th colspan="2">C&oacute;digo Postal</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="unidad" value="{{poi.direccion.unidad}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="codPostal" value="{{poi.direccion.codPostal}}" class="inputPoi">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">Localidad</th>
+					<th colspan="2">Barrio</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="localidad" value="{{poi.direccion.localidad}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="barrio" value="{{poi.direccion.barrio}}" class="inputPoi">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">Provincia</th>
+					<th colspan="2">Pais</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="text" name="provincia" value="{{poi.direccion.provincia}}" class="inputPoi">
+					</td>
+					<td colspan="2">
+						<input type="text" name="pais" value="{{poi.direccion.pais}}" class="inputPoi">
+					</td>
+				</tr>					
+			</table>
+			<div align="center">
+				<input type="submit" value="GUARDAR DATOS" class="boton botonAmarillo fuente-Oswald">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

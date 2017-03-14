@@ -1,0 +1,61 @@
+{{#partial "contenido"}}
+
+<div class="home busqueda" align="center">
+	<script type="text/javascript">Header ( "lupa", "Terminales" )</script>
+    <script type="text/javascript">NavBar ( "admin" )</script>
+    <div class="formulario fuente-Roboto" align="left">
+		<form method="post">
+		<b>COMUNA</b>
+			<select name="comuna" class="input fuente-RobotoC">
+            	<option value="" default></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+			</select>
+            <input type="submit" name="botonFiltrar" value="FILTRAR" class="boton botonAmarillo fuente-Oswald">
+            <div class="fuente-RobotoC" align="center">
+            	{{#if terminales}}
+                	<table cellspacing="0" cellpadding="7" class="resultados fuente-Roboto">
+                		<tr>
+                        	<th>ID</th>
+    			            <th>NOMBRE</th>
+    			            <th>COMUNA</th> 
+    			            <th colspan="4"></th>
+                        </tr>
+                        {{#each terminales}}
+                        	<tr>
+                            	<td><b>{{id}}</b></td>
+                            	<td>{{nombre}}</td>
+                            	<td>{{comuna}}</td>
+                            	<td><a href="/VerTerminal/{{id}}" class="enlace botonVerde">detalles</a></td>
+                            	<td><a href="/PerfilAdministrador/AdministrarTerminales/ModificarTerminal/{{id}}/ConfigurarAcciones" class="enlace botonGris">acciones</a></td>
+                            	<td><a href="/PerfilAdministrador/AdministrarTerminales/ModificarTerminal/{{id}}" class="enlace botonAzul">editar</a></td>
+                            	<td><a href="/BorrarTerminal/{{id}}" class="enlace botonRojo">eliminar</a></td>
+                        	</tr>
+                        {{/each}}
+                    </table>
+             	{{else}}
+             		<p class="textoFooter">No hay resultados</p>
+             	{{/if}}
+             	<button type="button" class="boton botonVerde fuente-RobotoC" OnClick="parent.location='AdministrarTerminales/CrearTerminal'">CREAR TERMINAL</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

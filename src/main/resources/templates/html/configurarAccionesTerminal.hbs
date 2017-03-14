@@ -1,0 +1,45 @@
+{{#partial "contenido"}}
+
+<div class="home editor" align="center">
+	<script type="text/javascript">Header ( "lapiz", "Acciones Terminal" )</script>
+	{{#if accionesDeshabilitadas}}
+		<div clas="formulario" align="left">
+			<form action="/HabilitarAccion" method="post">
+	    		<select name="accion" class="input">
+	    			{{#each accionesDeshabilitadas}}
+	    				<option value="{{this}}">{{this}}</option>
+	    			{{/each}}
+	    		</select>
+	    		<input type="submit" value="AGREGAR" class="boton botonVerde fuente-Oswald">
+	    	</form>
+	    </div>
+	{{/if}}
+	<div clas="formulario" align="center">
+		{{#if accionesHabilitadas}}
+			<table cellspacing="0" cellpadding="3" class="fuente-Roboto">
+       	  		<tr>
+    				<td colspan="2" class="textoFooter">ACCIONES HABILITADAS:</td>
+    			</tr>
+                {{#each accionesHabilitadas}}
+                	<tr>
+                    	<td>{{this}}</td>
+                    	<td>
+                        	<form action="/DeshabilitarAccion" method="post">
+                            	<input type="hidden" value="{{this}}" name="accion">
+                        		<input type="submit" value="QUITAR" class="enlace botonRojo fuente-Oswald">
+                        	</form>
+                        </td>
+					</tr>
+				{{/each}}
+			</table>
+		{{/if}}      
+		<form action="/GuardarConfiguracionAcciones" method="post">
+			<input type="submit" value="GUARDAR" class="boton botonAmarillo fuente-Oswald">
+		</form>
+		<script type="text/javascript">Footer ( )</script>
+    </div>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

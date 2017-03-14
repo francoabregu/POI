@@ -1,0 +1,49 @@
+{{#partial "contenido"}}
+
+<div class="home busqueda" align="center">
+	<script type="text/javascript">Header ( "detalles", "Consultas" )</script>
+	<div class="formulario fuente-Roboto">
+		<font class="textoFooter">TERMINAL</font>
+		<table cellspacing="5" cellpadding="7" class="datosPoi fuente-Roboto">
+	    	<tr>
+	       		<td>ID</td>
+	       		<td class="inputPoi">{{busqueda.busqueda_id}}</td>
+	       		<td>Criterio</td>
+	       		<td class="inputPoi">{{busqueda.criterioDeBusqueda}}</td>
+	    	</tr>
+	    	<tr>   	
+				<td>Terminal</td>
+	       		<td class="inputPoi">{{busqueda.nombreTerminal}}</td>
+				<td>Demora</td>
+	       		<td class="inputPoi">{{busqueda.tiempoDemorado}} ms.</td>
+			</tr>
+		</table>
+	</div>
+	<div class="formulario fuente-Roboto">
+		<font class="textoFooter">B&Uacute;SQUEDAS</font>
+		<table cellspacing="0" cellpadding="7" class="resultados fuente-Roboto">
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>DIRECCION</th> 
+		    	<th>RUBRO</th>
+	    		<th></th>
+	    	</tr>
+	    	{{#each pois}}
+				<tr>
+	        		<td>{{poi.poi_id}}</td>
+					<td><b>{{poi.nombre}}</b></td>
+					<td>{{poi.direccion.callePrincipal}} {{poi.direccion.numero}}</td>
+		    		<td>{{tipoPoi}}</td>
+	        		<td><a href="/VerPoi/{{poi.poi_id}}" class="enlace botonVerde">detalles</a></td>
+	        	</tr>
+			{{/each}}
+		</table>
+	</div>
+	<button type="button" class="botonNavBar botonGris fuente-Oswald" OnClick="history.back()">ATRAS</button>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}

@@ -1,0 +1,54 @@
+{{#partial "contenido"}}
+
+<div class="home" align="center">
+	<script type="text/javascript">Header ( "detalles", "{{poi.nombre}}" )</script>
+	<div class="formulario fuente-Roboto" align="left">
+		<table cellspacing="5" cellpadding="5">
+			<tr>
+				<td class="textoFooter">[{{tipoPoi}}]</td>
+			</tr>
+			<tr>
+				<td class="textoFooter"><i>{{poi.descripcion}}</i></td>
+			</tr>
+			<tr>
+				<td class="textoFooter">{{poi.direccion.callePrincipal}} {{poi.direccion.numero}}</td>
+			</tr>
+			{{#if distancia}}
+				<tr>
+                	<td class="textoFooter">Se encuentra a: {{distancia}} mts.</td>
+                </tr>
+			{{/if}}
+		</table>
+	</div>
+	<div class="formulario fuente-Roboto" align="left">
+		{{#if poi.horarioAtencion}}
+			<font class="textoFooter fuente-Roboto">HORARIOS DE ATENCI&Oacute;N</font>
+			{{#each poi.horarioAtencion}}
+				<ul>
+					<li class="fuente-RobotoC">{{nombreDia}} de {{horaInicio}}hs. a {{horaFin}}hs.</li>
+				</ul>	
+			{{/each}}
+		{{/if}}
+	</div>
+	<div class="formulario fuente-Roboto" align="left">
+		{{#if poi.servicios}}
+			<font class="textoFooter fuente-Roboto">SERVICIOS</font>
+			{{#each poi.servicios}}
+				<ul>
+					<li class="fuente-RobotoC">{{nombreServicio}}</li>
+					<ul>
+						{{#each listaFranjaDisponibilidadHoraria}}
+							<li class="fuente-RobotoC">{{nombreDia}} de {{horaInicio}}hs. a {{horaFin}}hs.</li>
+						{{/each}}
+					</ul>
+				</ul>	
+			{{/each}}
+		{{/if}}
+	</div>
+	<button type="button" class="botonNavBar botonGris fuente-Oswald" OnClick="history.back()">ATRAS</button>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}             

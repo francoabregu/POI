@@ -1,0 +1,45 @@
+{{#partial "contenido"}}
+
+<div class="home" align="center">
+	<script type="text/javascript">Header ( "detalles", "{{terminal.nombre}}" )</script>
+	<div class="formulario fuente-Roboto" align="left">
+		<table cellspacing="5" cellpadding="5">
+			<tr>
+				<td><b>COMUNA {{terminal.comuna}}</b></td>
+			</tr>
+			<tr>
+				<td><b>UBICACI&Oacute;N:</b> {{longitud}} ; {{latitud}}</td>
+			</tr>
+			<tr>
+				<td><b>USUARIO:</b> {{usuario.nombreUsuario}}</td>
+			</tr>
+			<tr>
+				<td>Tiempo m&aacute;ximo de b&uacute;squeda permitido <b>{{terminal.tiempoMaximoBusqueda}} ms</b></td>
+			</tr>
+			<tr>
+				<td class="textoFooter">ACCIONES HABILITADAS:</td> 
+			</tr>
+			{{#if accionesHabilitadas}}
+				<tr>
+					<td>
+						<ul>
+    						{{#each accionesHabilitadas}}
+    							<li> {{this}} </li>
+    						{{/each}}
+    					</ul>
+    				</td>
+    			</tr>
+    		{{else}}
+    			<tr>
+					<td>Esta Terminal <b>NO</b> posee acciones habilitadas</td>
+    			</tr>
+    		{{/if}}	
+		</table>
+	</div>
+	<button type="button" class="botonNavBar botonGris fuente-Oswald" OnClick="history.back()">ATRAS</button>
+    <script type="text/javascript">Footer ( )</script>
+</div>
+
+{{/partial}}
+
+{{>layout.hbs}}             
